@@ -1,5 +1,5 @@
 "use strict";
-console.log("web.js is started");
+
 var _express = require("express");
 
 var _express2 = _interopRequireDefault(_express);
@@ -25,7 +25,7 @@ var _bodyParser2 = _interopRequireDefault(_bodyParser);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // © 2019 greatestdiscoverynice <github.com/greatestdiscoverynice> 
-
+console.log("web.js is started");
 //Dependencies
 
 //Initial settings
@@ -110,34 +110,35 @@ var getTodayLunch = async function getTodayLunch(count) {
         console.log(finalLunch);
         todayLimit++;
       }
-    } else if (todayLimit === 1) {
+    } else if (todayLimit === 1 || todayLimit === 2) {
       if (lunch.date.year === currentDate_obj.year && lunch.date.month === currentDate_obj.month && lunch.date.day === currentDate_obj.day) {
         finalLunch.push(lunch);
         console.log(finalLunch);
+        todayLimit++;
+      } else {
+        var finalString = "";
+        finalLunch = finalLunch.reverse();
+        for (var _i in finalLunch) {
+          finalString += String(finalLunch[_i].date.year) + "년 " + String(finalLunch[_i].date.month) + "월 " + String(finalLunch[_i].date.day) + "일" + (finalLunch[_i].kind + " \uC785\uB2C8\uB2E4.\n\n") + finalLunch[_i].menu;
+        }
+        return finalString;
       }
-      todayLimit++;
-    } else if (todayLimit === 2) {
-      if (lunch.date.year === currentDate_obj.year && lunch.date.month === currentDate_obj.month && lunch.date.day === currentDate_obj.day) {
-        finalLunch.push(lunch);
-        console.log(finalLunch);
-      }
-      todayLimit++;
     } else if (todayLimit === 3) {
-      var finalString = "";
+      var _finalString = "";
       finalLunch = finalLunch.reverse();
-      for (var _i in finalLunch) {
-        finalString += String(finalLunch[_i].date.year) + "년 " + String(finalLunch[_i].date.month) + "월 " + String(finalLunch[_i].date.day) + "일" + (finalLunch[_i].kind + " \uC785\uB2C8\uB2E4.\n\n") + finalLunch[_i].menu;
+      for (var _i2 in finalLunch) {
+        _finalString += String(finalLunch[_i2].date.year) + "년 " + String(finalLunch[_i2].date.month) + "월 " + String(finalLunch[_i2].date.day) + "일" + (finalLunch[_i2].kind + " \uC785\uB2C8\uB2E4.\n\n") + finalLunch[_i2].menu;
       }
-      return finalString;
+      return _finalString;
     }
   }
   if (todayLimit === 3) {
-    var _finalString = "";
+    var _finalString2 = "";
     finalLunch = finalLunch.reverse();
-    for (var _i2 in finalLunch) {
-      _finalString += "\n" + String(finalLunch[_i2].date.year) + "년 " + String(finalLunch[_i2].date.month) + "월 " + String(finalLunch[_i2].date.day) + "일" + (finalLunch[_i2].kind + " \uC785\uB2C8\uB2E4.\n\n") + finalLunch[_i2].menu;
+    for (var _i3 in finalLunch) {
+      _finalString2 += "\n" + String(finalLunch[_i3].date.year) + "년 " + String(finalLunch[_i3].date.month) + "월 " + String(finalLunch[_i3].date.day) + "일" + (finalLunch[_i3].kind + " \uC785\uB2C8\uB2E4.\n\n") + finalLunch[_i3].menu;
     }
-    return _finalString;
+    return _finalString2;
   }
   last_date = lunches_with_date[i].date;
   console.log("last date");

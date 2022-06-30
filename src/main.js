@@ -84,19 +84,20 @@ const getTodayLunch = async (count, currentDate_obj = 0, schoolInfo, todayLimit=
           console.log(finalLunch)
           todayLimit++;       
         }
-      } else if(todayLimit === 1){
+      } else if(todayLimit === 1 || todayLimit === 2){
         if(lunch.date.year === currentDate_obj.year && lunch.date.month === currentDate_obj.month && lunch.date.day === currentDate_obj.day){
           finalLunch.push(lunch);
           console.log(finalLunch);
+          todayLimit++
+        } else {
+          let finalString = "";
+          finalLunch = finalLunch.reverse();
+          for(let i in finalLunch){
+            finalString += String(finalLunch[i].date.year)+"년 " + String(finalLunch[i].date.month) + "월 " + String(finalLunch[i].date.day) +"일"+ `${finalLunch[i].kind} 입니다.\n\n`+finalLunch[i].menu;
+          }
+          return finalString;
         }
-        todayLimit++
-      } else if(todayLimit === 2){
-        if(lunch.date.year === currentDate_obj.year && lunch.date.month === currentDate_obj.month && lunch.date.day === currentDate_obj.day){
-          finalLunch.push(lunch);
-          console.log(finalLunch);
-        }
-        todayLimit++
-      }else if(todayLimit === 3){
+      } else if(todayLimit === 3){
         let finalString = "";
         finalLunch = finalLunch.reverse();
         for(let i in finalLunch){
