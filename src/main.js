@@ -1,4 +1,4 @@
-// © 2019 greatestdiscoverynice <github.com/greatestdiscoverynice> 
+// © 2022 greatestdiscoverynice <github.com/greatestdiscoverynice> 
 console.log("web.js is started")
 //Dependencies
 import express from "express";

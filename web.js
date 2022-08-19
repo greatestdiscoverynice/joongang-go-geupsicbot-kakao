@@ -24,7 +24,7 @@ var _bodyParser2 = _interopRequireDefault(_bodyParser);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// © 2019 greatestdiscoverynice <github.com/greatestdiscoverynice> 
+// © 2022 greatestdiscoverynice <github.com/greatestdiscoverynice> 
 console.log("web.js is started");
 //Dependencies
 
