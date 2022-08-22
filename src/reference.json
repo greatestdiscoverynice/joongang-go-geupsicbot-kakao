@@ -1,0 +1,44 @@
+{
+    "intent": {
+      "id": "1hpd627n2npro6h740rmd01e",
+      "name": "블록 이름"
+    },
+    "userRequest": {
+      "timezone": "Asia/Seoul",
+      "params": {
+        "ignoreMe": "true"
+      },
+      "block": {
+        "id": "1hpd627n2npro6h740rmd01e",
+        "name": "블록 이름"
+      },
+      "utterance": "발화 내용",
+      "lang": null,
+      "user": {
+        "id": "600280",
+        "type": "accountId",
+        "properties": {}
+      }
+    },
+    "bot": {
+      "id": "5d3a9fb5ffa748000122ffe4",
+      "name": "봇 이름"
+    },
+    "action":
+  {
+      "name": "날짜",
+      "clientExtra": null,
+      "params": {
+        "date_plugin": "{\"value\":\"2021-10-21\",\"userTimeZone\":\"UTC+9\"}",
+        "sys_date": "{\"date\": \"2019-12-26\", \"dateTag\": null, \"dateHeadword\": null, \"year\": \"2019\", \"month\": \"12\", \"day\": \"26\"}"
+      },
+      "id": "5ab1cb5c9418c22b668807d4",
+      "detailParams": {
+        "date_plugin": {
+          "origin": "2018-03-20",
+          "value": "{\"value\":\"2018-03-20\",\"userTimeZone\":\"UTC+9\"}",
+          "groupName": ""
+        }
+      }
+    }
+  }
